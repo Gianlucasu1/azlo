@@ -3,15 +3,16 @@ import styles from "@/css/layout_hero_info.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
 import { link } from 'fs'
-import { SpecialistSwitcher } from '../specialist-switcher'
+import { SpecialistSwitcher } from '../SpecialistSwitcher'
 
-export const HeroInfo = ({ title, content, buttonTitle, linkTitle, imgOrder, list }: {
+export const HeroInfo = ({ title, content, buttonTitle, linkTitle, imgOrder, list, urlLink }: {
   title: string,
   content: string,  
   buttonTitle: string,
   linkTitle?: string,
   imgOrder: "left" | "right",
-  list?: string[]
+  list?: string[],
+  urlLink?: string
 }) => {
   return (
     <div className={styles.main__container}>
@@ -24,11 +25,11 @@ export const HeroInfo = ({ title, content, buttonTitle, linkTitle, imgOrder, lis
           <p className={styles.content}>{content}</p>
           {list && list.length > 0 ? <SpecialistSwitcher listItems={list} /> : <></>}
           <div className={styles.buttons__container}>
-            <Link className={styles.first__button} href="#">
+            <Link className={`${styles.first__button} no-underline`} href={`${urlLink}`}>
               {buttonTitle}
             </Link>
             { linkTitle && linkTitle.length > 1 ? 
-            <Link className="text-red-600" href="#">
+            <Link className="text-black font-bold" href="#">
               {linkTitle}
             </Link> :
             <></>

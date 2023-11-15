@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 import styles from "@/css/custcomments.module.css"
-import CustomerFeedback from "../customer-feedback";
+import CustomerFeedback from "../CustomerFeedback";
 
 export default function CustomerCommentsSection() {
   return (
-    <section className="w-full px-8 py-32">
+    <section className="w-full px-8 box-border pt-32">
       <div className={cn("", styles.wrapper)}>
         <h2 className="text-black text-5xl font-bold">Quienes confían en nosotros</h2>
         <div className="grid grid-cols-3 py-20">

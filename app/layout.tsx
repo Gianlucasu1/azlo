@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import 'bootstrap/dist/css/bootstrap.css';
 import { sans, lusitana } from '@/css/fonts'
+
 
 
 
